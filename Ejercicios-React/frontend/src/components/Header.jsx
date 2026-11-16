@@ -18,6 +18,7 @@ const Header = () =>
                 {isLoggedIn ? (<button onClick={logout}>Cerrar sesion</button>):(<a href="/login">Login</a>)}
                 
                 <a href="/actividades">Actividades</a>
+                <a href="/poke">Pokemon</a>
             </nav>
         </header>
     )
