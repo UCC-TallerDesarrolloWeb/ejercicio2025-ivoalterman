@@ -26,11 +26,36 @@
             font-weight: bold;
         }
 
+        /* Opcion activa: grid con dos columnas del mismo ancho */
+        article{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin: 0px 50px;
+        }
+
+        /* Opcion con float (para probarla, comentar la regla de article de arriba y descomentar esto)
+        article{
+            margin: 0px 50px;
+            overflow: auto;
+        }
+        .columna1{
+            float: left;
+            width: 45%;
+        }
+        .columna2{
+            float: right;
+            width: 45%;
+        }
+        */
+
+        /* Opcion con column-count (la que usaba antes)
         article{
             column-count: 2;
             column-gap: 100px;
-            margin: 0px 50px ;
+            margin: 0px 50px;
         }
+        */
 
     </style>
 </head>
