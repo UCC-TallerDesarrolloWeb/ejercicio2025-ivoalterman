@@ -58,7 +58,7 @@ a{
     color: var(--color-texto);
     font-weight: 500;
     padding: 5px;
-    transition: background-color 0.8s linear 0.2s, padding 0.3 ease ;
+    transition: background-color 0.8s linear 0.2s, padding 0.3s ease ;
 }
 
 a:hover{
