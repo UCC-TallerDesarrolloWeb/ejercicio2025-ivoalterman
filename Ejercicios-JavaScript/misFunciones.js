@@ -83,3 +83,40 @@ let sumar = () => {
     document.getElementById("totalS").value = Number(sum1) + Number(sum2);
   }
 };
+
+/**
+ * Lee la distancia y la unidad de primerWeb y abre segundaWeb pasandolas por la URL
+ * @method irASegundaWeb
+ */
+let irASegundaWeb = () => {
+  let distancia = document.getElementById("distancia").value;
+  let unidad = document.getElementsByName("unidades")[0].value;
+
+  if (distancia === "" || isNaN(distancia.replace(",", "."))) {
+    alert("Ingrese una distancia numérica");
+  } else {
+    window.location.href =
+      "segundaWeb.html?distancia=" +
+      encodeURIComponent(distancia) +
+      "&unidad=" +
+      encodeURIComponent(unidad);
+  }
+};
+
+/**
+ * Muestra en segundaWeb la distancia y unidad recibidas desde primerWeb
+ * @method mostrarDistancia
+ */
+let mostrarDistancia = () => {
+  let params = new URLSearchParams(window.location.search);
+  let unidades = {
+    unid_metros: "metros",
+    unid_yardas: "yardas",
+    unid_pie: "pies",
+    unid_pulgadas: "pulgadas",
+  };
+  let distancia = params.get("distancia");
+  let unidad = unidades[params.get("unidad")];
+
+  document.getElementById("dist").value = distancia + " " + unidad;
+};
